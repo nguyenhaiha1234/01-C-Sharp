@@ -17,7 +17,7 @@ namespace Bai40
             double X = x; // mỗi vòng lặp ta tính X lũy thừa i
             for (i=2; i<=N; i++)
             {
-                X *= x; // với i = 2 thì X = x^2; i =3 thì X = x^3...
+                X *= x; // với i = 2 thì X = x^2; i =3 thì X = x^3... abc
                 S = Math.Sqrt(X + S);           
             }
             Console.WriteLine($"Kết quả S là: {S:f5}"); //ta muốn viết kết quả ra là số thực có 5 số thập phân
