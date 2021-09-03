@@ -11,7 +11,7 @@ namespace Baitap
         public static int[] TaoMangNgauNhien()
         {
             System.Random random = new System.Random();
-            int n = random.Next(minValue: 10, maxValue: 50);
+            int n = random.Next(minValue: 5, maxValue: 10);
             int[] A = new int[n];
             for (int i = 0; i < n; i++)
             {
@@ -60,6 +60,13 @@ namespace Baitap
             int[] A = TaoMangNgauNhien();
             //int[] A = clsXulyMang.NhapMang();
             clsXulyMang.XuatMang(A);
+            int sl = 0;
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (i<100 && clsXulySoNguyen.isNguyenTo(A[i])) sl++;
+            }
+            Console.WriteLine($"Có {sl} số nguyên tố nhỏ hơn 100 trong mảng");
+
         }
     }
 }
