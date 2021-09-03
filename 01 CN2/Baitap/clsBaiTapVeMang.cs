@@ -64,7 +64,7 @@ namespace Baitap
             int sl = 0;
             for (int i = 0; i < A.Length; i++)
             {
-                if (i<100 && clsXulySoNguyen.isNguyenTo(A[i])) sl++;
+                if (A[i]<100 && clsXulySoNguyen.isNguyenTo(A[i])) sl++;
             }
             Console.WriteLine($"Có {sl} số nguyên tố nhỏ hơn 100 trong mảng");
 
