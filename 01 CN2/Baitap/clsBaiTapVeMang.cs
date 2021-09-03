@@ -17,6 +17,7 @@ namespace Baitap
             {
                 A[i] = random.Next(minValue: 0, maxValue: 150);
             }
+            A[5] = 2;
             return A;
         }
         public static void Bai122()
