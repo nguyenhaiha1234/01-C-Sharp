@@ -11,11 +11,11 @@ namespace Baitap
         public static int[] TaoMangNgauNhien()
         {
             System.Random random = new System.Random();
-            int n = random.Next(minValue: 5, maxValue: 10);
+            int n = random.Next(minValue: 5, maxValue: 20);
             int[] A = new int[n];
             for (int i = 0; i < n; i++)
             {
-                A[i] = random.Next(minValue: 0, maxValue: 150);
+                A[i] = random.Next(minValue: 0, maxValue: 50);
             }
             A[5] = 2;
             return A;
@@ -67,6 +67,59 @@ namespace Baitap
                 if (A[i]<100 && clsXulySoNguyen.isNguyenTo(A[i])) sl++;
             }
             Console.WriteLine($"Có {sl} số nguyên tố nhỏ hơn 100 trong mảng");
+
+        }
+
+        public static void SapxepMang()
+        {
+            Console.WriteLine("Mảng ban đầu");
+            int[] A = TaoMangNgauNhien();
+            clsXulyMang.XuatMang(A);
+            //int[] A = clsXulyMang.NhapMang();
+            A = clsXulyMang.SapXepMangTangdan(A);
+            Console.WriteLine("Mảng sau khi sắp xếp");
+            clsXulyMang.XuatMang(A);
+        }
+        public static void Bai140()
+        {
+            static double DuongNhoNhat(double[] A)
+            {
+                double linhcanh = -1;
+                for (int i = 0; i < A.Length; i++)
+                {
+                    if (A[i] > 0)
+                    {
+                        if (A[i] < linhcanh || linhcanh == -1) linhcanh = A[i];
+                    }
+                }
+                return linhcanh;
+            }
+            Console.WriteLine("Bài 140: Hãy tìm giá trị dương nhỏ nhất trong mảng 1 chiều các số thực. Nếu mảng không có giá trị dương thì sẽ trả về -1");
+            //int[] A = TaoMangNgauNhien();
+            double[] A = clsXulyMang.NhapMangSoThuc();
+            //clsXulyMang.XuatMang(A);
+            Console.WriteLine($"{DuongNhoNhat(A)}");
+
+        }
+
+        public static void Bai151()
+        {
+            static double TimNguyenToLonNhat(int[] A)
+            {
+                int linhcanh = -1;
+                for (int i = 0; i < A.Length; i++)
+                {
+                    if (A[i] > linhcanh)
+                        if (clsXulySoNguyen.isNguyenTo(A[i]))
+                            linhcanh = A[i];
+                }
+                return linhcanh;
+            }
+            Console.WriteLine("Bài 151: Hãy tìm số nguyên tố lớn nhất trong mảng 1 chiều các số nguyên. Nếu mảng không có số nguyên tố thì trả về -1");
+            int[] A = TaoMangNgauNhien();
+            //int[] A = clsXulyMang.NhapMang();
+            clsXulyMang.XuatMang(A);
+            Console.WriteLine($"{TimNguyenToLonNhat(A)}");
 
         }
     }

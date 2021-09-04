@@ -113,5 +113,22 @@ namespace Baitap
             }
             return vitri;
         }
+
+        public static int[] SapXepMangTangdan(int[] A)
+        {
+            for (int i=0; i<A.Length; i++)
+            {
+                for (int j=i+1; j<A.Length; j++)
+                {
+                    if (A[j] < A[i]) {
+                        int num = A[i];
+                        A[i] = A[j];
+                        A[j] = num;
+                    }
+
+                }
+            }
+            return A;
+        }
     }
 }

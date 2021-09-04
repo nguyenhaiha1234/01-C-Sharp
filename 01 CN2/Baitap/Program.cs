@@ -11,7 +11,10 @@ namespace Baitap
             //clsBaiTapVeMang.Bai122();
             //clsBaiTapVeMang.Bai123();
             //clsBaiTapVeMang.Bai124();
-            clsBaiTapVeMang.Bai125();
+            //clsBaiTapVeMang.Bai125();
+            //clsBaiTapVeMang.SapxepMang();
+            //clsBaiTapVeMang.Bai140();
+            clsBaiTapVeMang.Bai151();
         }
     }
 }
